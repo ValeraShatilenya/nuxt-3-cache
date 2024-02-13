@@ -1,0 +1,17 @@
+version: "3.1"
+services:
+  redis:
+    image: "redis:alpine"
+    container_name: nuxt-3-redis
+
+  node:
+    image: node:18
+    container_name: nuxt-3-node
+    working_dir: /var/www/nuxt-3/
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/var/www/nuxt-3/
+    command: "tail -f /dev/null"
+    ports:
+      - "3000:3000"
