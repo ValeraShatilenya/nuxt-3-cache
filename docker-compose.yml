@@ -2,11 +2,11 @@ version: "3.1"
 services:
   redis:
     image: "redis:alpine"
-    container_name: nuxt-3-redis
+    container_name: nuxt-3-cache-redis
 
   node:
     image: node:18
-    container_name: nuxt-3-node
+    container_name: nuxt-3-cache-node
     working_dir: /var/www/nuxt-3/
     environment:
       - NODE_ENV=development

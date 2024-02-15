@@ -8,7 +8,6 @@ export const useProductsStore = defineStore("products", {
   },
   actions: {
     async fetch() {
-      console.log(useNitro());
       const { data: products } = await useFetch("/api/products");
       this.products = products;
 

@@ -1,22 +1,27 @@
 <template>
-  <div class="grid grid-cols-2 gap-4">
-    <div
-      v-for="{ id, title, images } in products"
-      :key="id"
-      class="card flex flex-col gap-5 justify-between"
-    >
-      <div class="flex flex-col gap-5">
-        <img :src="images[0]" class="max-h-32 mx-auto" />
-        <p class="font-bold text-gray-500 text-center truncate">
-          {{ title }}
-        </p>
-      </div>
-      <NuxtLink
-        :to="`/products/${id}`"
-        class="block text-center w-full transition-all bg-teal-500 text-white rounded-md p-2 hover:bg-teal-600 hover:shadow-md"
+  <div>
+    <div class="grid grid-cols-2 gap-4">
+      <div
+        v-for="{ id, title, images } in products"
+        :key="id"
+        class="card flex flex-col gap-5 justify-between"
       >
-        View details
-      </NuxtLink>
+        <div class="flex flex-col gap-5">
+          <img :src="images[0]" class="max-h-32 mx-auto" />
+          <p class="font-bold text-gray-500 text-center truncate">
+            {{ title }}
+          </p>
+        </div>
+        <NuxtLink
+          :to="`/products/${id}`"
+          class="block text-center w-full transition-all bg-teal-500 text-white rounded-md p-2 hover:bg-teal-600 hover:shadow-md"
+        >
+          View details
+        </NuxtLink>
+      </div>
+    </div>
+    <div>
+      {{ 111 }}
     </div>
   </div>
 </template>
