@@ -13,8 +13,6 @@
     "@pinia/nuxt": "^0.5.1",
     "@tictactrip/axios-redis": "^3.0.0",
     "axios": "^1.6.7",
-    "dotenv": "^16.4.2",
-    "flatted": "^3.2.9",
     "js-md5": "^0.8.3",
     "nuxt": "^3.10.1",
     "pinia": "^2.1.7",

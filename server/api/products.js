@@ -24,7 +24,7 @@ const cachedGetProducts = cachedFunction(getProducts, {
 export default defineEventHandler(async (event) => {
   // const cacheStorage = useStorage("cache:test");
   // const cachedKeys = await cacheStorage.getKeys();
-  const { data } = await getProducts();
+  // const { data } = await getProducts();
 
   // const redisStorage = useStorage("redis");
   // const redisKeys = await redisStorage.getKeys();
@@ -38,7 +38,7 @@ export default defineEventHandler(async (event) => {
 
   // const { data } = await cachedAxios.get("/products?limit=2");
 
-  // const { data } = await cachedGetProducts("pt");
+  const { data } = await cachedGetProducts("pt");
 
   return data.products;
 });

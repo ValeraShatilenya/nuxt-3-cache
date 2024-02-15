@@ -1,6 +1,4 @@
 import { defineStore } from "pinia";
-// import cachedAxios from "~/utils/cachedAxios";
-import axios from "axios";
 
 export const useProductsStore = defineStore("products", {
   state: () => {
@@ -8,15 +6,11 @@ export const useProductsStore = defineStore("products", {
   },
   actions: {
     async fetch() {
-      const { data: products } = await useFetch("/api/products");
-      this.products = products;
+      const { $cachedAxios } = useNuxtApp();
 
-      // const { data } = await axios
-      //   .create({
-      //     baseURL: "https://dummyjson.com",
-      //   })
-      //   .get("/products?limit=2");
-      // this.products = data.products;
+      const { data } = await $cachedAxios("PRODUCTS").get("/products?limit=2");
+
+      this.products = data.products;
     },
   },
 });
