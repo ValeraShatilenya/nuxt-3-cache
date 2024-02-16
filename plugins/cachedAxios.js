@@ -32,7 +32,7 @@ const getAdapterFunction = (client) => {
       .create(Object.assign(config, { adapter: axios.defaults.adapter }))
       .request(config);
 
-    return { data: response.data };
+    return { data: response.data, status: response.status };
   };
 
   const getCache = async (key) => {
@@ -63,7 +63,9 @@ const getAdapterFunction = (client) => {
 
       response = await fetch(config);
 
-      setCache(key, response);
+      if (response.status < 300) {
+        setCache(key, response);
+      }
 
       return response;
     } catch (error) {
