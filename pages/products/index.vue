@@ -39,7 +39,7 @@ export default defineNuxtComponent({
 });
 </script> -->
 
-<script>
+<!-- <script>
 import { useProductsStore } from "@/stores/products";
 
 export default defineNuxtComponent({
@@ -51,9 +51,9 @@ export default defineNuxtComponent({
     return { products: productsStore.products };
   },
 });
-</script>
+</script> -->
 
-<!-- <script setup>
+<script setup>
 import { useProductsStore } from "~/stores/products";
 import { onMounted } from "vue";
 
@@ -63,12 +63,10 @@ await productsStore.fetch();
 
 const products = productsStore.products;
 
-
-
 onMounted(() => {
   console.log(products);
 });
-</script> -->
+</script>
 
 <!-- <script setup>
 const { data: products } = await useFetch("https://fakestoreapi.com/products");
